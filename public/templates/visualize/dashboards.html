@@ -4,7 +4,9 @@
     </div>
     <div ng-show="!actrl.addingNewAgent">
         <div layout="column" ng-controller="overviewController as octrl">
-            <div class="euiPage" style="padding: 12px 8px 0!important">
+            <div ng-show="octrl.tab !== 'extensionsDirectory'">
+                
+            <div class="euiPage" style="padding: 12px 8px 0!important" >
                 <div ng-if="octrl.tab !== 'welcome'" style="padding: 0!important" class="euiText euiText--small">
                     <h2 class="euiTitle euiTitle--medium" style="padding-top:6px">
                         <span
@@ -23,7 +25,7 @@
             <!-- End navigation section -->
 
             <!-- Discover search bar section -->
-            <kbn-dis ng-show="octrl.tab !== 'welcome'" style="padding-bottom: 16px;margin-top: -8px;"></kbn-dis>
+            <kbn-dis  ng-show="octrl.tab !== 'welcome'" style="padding-bottom: 16px;margin-top: -8px;"></kbn-dis>
             <!-- End Discover search bar section -->
             
             <!-- Loading status section -->
@@ -92,3 +94,5 @@
             <div ng-class="{'no-opacity': resultState === 'none' || !rendered}" ng-show="octrl.tabView === 'panels' && resultState !== 'Fetching dashboard data...'">
                 <react-component name="WzVisualize" props="octrl.visualizeProps" />
             </div>
+
+        </div>
