@@ -8,10 +8,8 @@ import {
   EuiToolTip,
   EuiIcon,
   EuiPopover,
-} from '@elastic/eui';
-import {
   EuiInputPopover
-} from '@elastic/eui/es/components/popover';
+} from '@elastic/eui';
 
 const statusMap = {
   unsaved: {
