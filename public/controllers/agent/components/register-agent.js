@@ -10,7 +10,6 @@
  * Find more information about this on the LICENSE file.
  */
 import React, { Component, Fragment } from 'react';
-import { version } from '../../../../package.json';
 
 import {
   EuiSteps,
@@ -46,18 +45,18 @@ export class RegisterAgent extends Component {
   }
 
   async componentDidMount() {
+    const wazuhVersion = '3.12.3';
     try {
-      const wazuhVersion = await this.props.getWazuhVersion();
       const apiAddress = await this.props.getCurrentApiAddress();
       const needsPassword = await this.props.needsPassword();
       this.setState({
         serverAddress: apiAddress,
         needsPassword: needsPassword,
-        wazuhVersion: wazuhVersion
+        wazuhVersion
       });
     } catch (error) {
       this.setState({
-        wazuhVersion: version
+        wazuhVersion
       });
     }
   }
